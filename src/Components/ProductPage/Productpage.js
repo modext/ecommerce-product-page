@@ -48,7 +48,6 @@ function Productpage(props) {
           <img src={currentIndex=== null ? data.data[0].main : clickedImage } onClick={toggleModal2} alt="" className='lg:rounded-2xl cursor-pointer' />
             {modal2 && (
               <Preview clickedImage={clickedImage} 
-                handleRotationRight={handleRotationRight}
                 setClickedImage={setClickedImage}
                 modal2={modal2}
                 setModal2={setModal2}
