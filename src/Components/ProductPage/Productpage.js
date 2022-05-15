@@ -38,13 +38,45 @@ function Productpage(props) {
     console.log(index)
   }
 
-  
-  
-  
+  const handleRotationRight = ()=>{
+    const totalLength = data.data.length;
+    if (currentIndex + 1 >= totalLength) {
+      setCurrentIndex(0);
+      const newPix = data.data[0].main;
+      setClickedImage(newPix);
+      return;
+    }
+    const newIndex = currentIndex + 1
+    const newPix= data.data.filter((item) => {
+      return data.data.indexOf(item) === newIndex;
+    });
+    const newItem = newPix[0].main;
+    setClickedImage(newItem);
+    setCurrentIndex(newIndex);
+}
+
+const handleRotationLeft = ()=>{
+    const totalLength = data.data.length;
+    if (currentIndex === 0 ) {
+      setCurrentIndex(totalLength - 1);
+      const newPix = data.data[totalLength - 1].main;
+      setClickedImage(newPix);
+      return;
+    }
+    const newIndex = currentIndex - 1
+    const newPix= data.data.filter((item) => {
+      return data.data.indexOf(item) === newIndex;
+    });
+    const newItem = newPix[0].main;
+    setClickedImage(newItem);
+    setCurrentIndex(newIndex);
+}
+
+
   return (
-    <main className='lg:flex lg:flex-row w-full'>
+    <main className='lg:flex lg:flex-row w-full -mt-10 '>
       <div className='lg:p-20'>
-        <div>
+        <div className='flex flex-row'>
           <img src={currentIndex=== null ? data.data[0].main : clickedImage } onClick={toggleModal2} alt="" className='lg:rounded-2xl cursor-pointer' />
             {modal2 && (
               <Preview clickedImage={clickedImage} 
@@ -57,14 +89,24 @@ function Productpage(props) {
                 setCurrentIndex = {setCurrentIndex}
               />
             )}
+            <div className='lg:hidden fixed  top-0 left-4 right-0 bottom-0  flex items-center content-center justify-between h-[30%] w-auto'>
+              <button onClick={handleRotationLeft} className='z-10 bg-white rounded-3xl w-8 h-8 '>
+                <img src={prev} className='ml-2 w-3 h-3' alt="" />
+              </button>
+              <button onClick={handleRotationRight} className='bg-white rounded-3xl w-8 h-8  content-center'>
+                <img src={next}  className=' ml-2 w-3 h-3' alt="" />
+              </button>
+            </div>
+            
         </div>
         
-        <div className='lg:flex lg:justify-between pt-10 lg:w-auto '>
+        <div className='lg:flex lg:justify-between pt-10 lg:w-auto hidden'>
         {data.data.map((item, index)=>(
           <div key={index} >
           <img src={item.thumb} data-index={index} alt='' onClick= {()=> handleClick(item,index)} className={`${currentIndex=== index ?'h-24 w-24 rounded-2xl cursor-pointer hover:opacity-50 border-2 border-orange-500 opacity-50 ': 'h-24 w-24 rounded-2xl cursor-pointer hover:opacity-50 '}`} />
           </div>
         ))}
+        
         
         </div>
         

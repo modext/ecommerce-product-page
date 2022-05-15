@@ -9,6 +9,7 @@ function Cartcontent(props) {
     const price = (125.00).toFixed(2) 
     const total =(count * price).toFixed(2)
     console.log(count)
+    const toggleModal = props.toggleModal
 
 
 
@@ -19,22 +20,24 @@ function Cartcontent(props) {
 
 
   return (
-    <div className='cart-container border bg-white h-56   rounded-xl shadow-2xl fixed '>
-        <div className='pl-6 h-1/4 border-b border-gray-300 flex  items-center'>
-            <h2 className='font-bold pt-2 '> Cart</h2>
+    <div className='lg:left-36 left-12 lg:mx-0 mx-auto top-4 lg:top-0 cart-container border bg-white lg:h-56 h-72 rounded-xl shadow-2xl absolute '>
+        <div className='pl-6 h-1/4 mt-2 border-b border-gray-300 flex  items-center'>
+            <h2 className='font-bold  '> Cart</h2>
         </div>
         {count>=1 ? (
-        <div className='h-2/5 justify-center items-center'>
-            <div className='flex items-center justify-between pt-6 pb-4 pl-6 pr-6'>
-                <img src={product1} alt="" className=' rounded h-12 w-auto' />
-                <div className='text-left text-xs'>
+        <div className='h-2/5 justify-center  items-center'>
+            <div className='flex items-center justify-between mt-8 lg:mt-4 pb-4 pl-6 pr-6'>
+                <img src={product1} alt="" className=' rounded h-16 lg:h-14 w-auto' />
+                <div className='text-left text-xs mt-2 '>
                     <p className='text-sm text-gray-500'>Fall Limited Edition Sneakers </p>
                     <p className=' text-gray-500'>{`$${price}  x  ${count}`} <span className='font-bold pl-1'>{` $${total}`}</span></p>
                 </div>
                 <button><img   onClick={reset} src={deleteIcon} alt="" className='h-4 w-3 items-center' /></button> 
             </div>
-            <div className='pl-6 pr-6 pt-2'>
-                <button className='h-12  bg-orange-500 rounded-xl text-white flex w-full items-center justify-center font-bold'>Checkout</button>
+            <div className='pl-6 pr-6 pt-2 mt-4 lg:mt-0'>
+                <button onClick= {toggleModal} className='h-12  bg-orange-500 rounded-xl text-white flex w-full items-center justify-center font-bold'>
+                    Checkout
+                </button>
             </div>
             
             

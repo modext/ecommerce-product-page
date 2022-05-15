@@ -56,14 +56,20 @@ function Preview({
                     <button className=' ' onClick={toggleModal2}> <img src={close} className='h-4 w-4 hover:fill-cyan-700 ' alt="" /> </button>
                 </div>
                 <div className='flex flex-row items-center justify-center'>
-                    <button onClick={handleRotationLeft} className='z-10 bg-white rounded-2xl left-96 ml-2 w-8 h-8  absolute content-center'>
-                        <img src={prev} className='pl-2 ml-.5 w-4 h-2.5' alt="" />
+                    <button onClick={handleRotationLeft} className='z-10 bg-white rounded-2xl -mr-4 w-8 h-8 '>
+                        <div  className='  ml-2 mb-2 h-2 w-auto '>
+                        <svg  className=' h-4 w-3 text-black hover:fill-current hover:text-orange-500' width="1" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 1 3 9l7 7" stroke="currentColor" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+                        </div>
+                        {/* <img src={prev} className='text-black hover:fill-current hover:text-red-400 pl-2 w-4 h-auto' alt="" /> */}
                     </button>
                     <div className='  flex '>
                         <img src={currentIndex2=== null ? data.data[0].main : clickedImage2 } onClick='' alt="" className='lg:rounded-2xl w-96 h-96 cursor-pointer' />
                     </div>
                     <button onClick={handleRotationRight} className='bg-white rounded-2xl w-8 h-8 -ml-4 content-center'>
-                        <img src={next}  className='pl-2 ml-1 w-4 h-2.5' alt="" />
+                        <div className='  ml-3 mb-1 h-2 w-auto '>
+                            <svg className=' h-6 w-3 text-black hover:fill-current hover:text-orange-500' width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path className='' d="m1 1 6 6-6 6" stroke="currentColor" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+                        </div> 
+                        {/* <img src={next}  className=' pl-2 ml-1 w-4 h-2.5' alt="" /> */}
                     </button>
                 </div> 
                     <div className='flex justify-between pt-6 w-80  '>

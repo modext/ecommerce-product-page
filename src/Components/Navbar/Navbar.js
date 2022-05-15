@@ -31,7 +31,7 @@ function Navbar(props) {
     }
 
   return (
-    <header className='border-b border-gray-300 '>
+    <header className='z-10 border-b border-gray-300 relative bg-white'>
       <div className={navbar? "block overlays": "hidden" }></div>
       <div className='navbar flex items-center lg:ml-1 m-2 h-12 w-auto'>
         <section className='items-center'>
@@ -59,15 +59,15 @@ function Navbar(props) {
                 <div className="modal">
                   <div onClick={toggleModal} className="overlay"></div>
                   <div className="modal-content">
-                    <Cartcontent reset={props.resetCounter} count ={props.count} />
+                    <Cartcontent reset={props.resetCounter} count ={props.count} toggleModal = {props.toggleModal} />
                   </div>
                 </div>
               )}
               <img src={cart} alt="shopping cart" className='h-5 w-5 mr-4  black ' />
               <span className={props.count>=1 ? 'count block':'hidden'} >{props.count}</span>
             </div>
-            {/* <div className="mt-4">{popup ? <Cartcontent  className=""/> : ""  }</div> */}
-            <a href=''> <img src={avatar} alt="shopping cart" className='h-8 w-8 mr-4 hover:border-orange-500 hover:border-2 hover:rounded-2xl' /></a>
+            
+            <button> <img src={avatar} alt="shopping cart" className='h-8 w-8 mr-4 hover:border-orange-500 hover:border-2 hover:rounded-2xl' /></button>
           </div>
           
         </section>
