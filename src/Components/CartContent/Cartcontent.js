@@ -20,7 +20,7 @@ function Cartcontent(props) {
 
 
   return (
-    <div className='lg:left-36 left-12 lg:mx-0 mx-auto top-4 lg:top-0 cart-container border bg-white lg:h-56 h-72 rounded-xl shadow-2xl absolute '>
+    <div className='lg:left-36  top-4 lg:top-0 cart-container border bg-white lg:h-56 h-72 rounded-xl shadow-2xl absolute '>
         <div className='pl-6 h-1/4 mt-2 border-b border-gray-300 flex  items-center'>
             <h2 className='font-bold  '> Cart</h2>
         </div>

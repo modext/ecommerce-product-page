@@ -89,7 +89,7 @@ const handleRotationLeft = ()=>{
                 setCurrentIndex = {setCurrentIndex}
               />
             )}
-            <div className='lg:hidden fixed  top-0 left-4 right-0 bottom-0  flex items-center content-center justify-between h-[30%] w-auto'>
+            <div className='lg:hidden absolute z-0 top-24 right-4 left-4 bottom-0  flex items-center content-center justify-between h-[30%] w-auto'>
               <button onClick={handleRotationLeft} className='z-10 bg-white rounded-3xl w-8 h-8 '>
                 <img src={prev} className='ml-2 w-3 h-3' alt="" />
               </button>

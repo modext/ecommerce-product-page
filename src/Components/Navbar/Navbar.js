@@ -58,9 +58,9 @@ function Navbar(props) {
               {modal && (
                 <div className="modal">
                   <div onClick={toggleModal} className="overlay"></div>
-                  <div className="modal-content">
+                  <div className="modal-content grid place-items-center">
                     <Cartcontent reset={props.resetCounter} count ={props.count} toggleModal = {props.toggleModal} />
-                  </div>
+                  </div> 
                 </div>
               )}
               <img src={cart} alt="shopping cart" className='h-5 w-5 mr-4  black ' />
