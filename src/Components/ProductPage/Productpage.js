@@ -77,7 +77,7 @@ const handleRotationLeft = ()=>{
     <main className='lg:flex lg:flex-row w-full -mt-10 '>
       <div className='lg:p-20'>
         <div className='flex flex-row'>
-          <img src={currentIndex=== null ? data.data[0].main : clickedImage } onClick={toggleModal2} alt="" className='lg:rounded-2xl cursor-pointer' />
+          <img src={currentIndex=== null ? data.data[0].main : clickedImage } onClick={toggleModal2} alt="" className='lg:rounded-2xl cursor-pointer pointer-events-none lg:pointer-events-' />aut
             {modal2 && (
               <Preview clickedImage={clickedImage} 
                 setClickedImage={setClickedImage}
